@@ -1,7 +1,7 @@
 <div class="card col-sm-6 mx-auto mt-5">
   <div class="card-body">
     <h3 class="mt-1 mb-3">アカウントを作成</h3>
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
  
     <div class="form-group">
@@ -19,6 +19,35 @@
       <%= f.password_field :password_confirmation, :class => "form-control" %>
     </div>
  
+     <div class="form-group">
+      <%= f.label :nickname, "ニックネーム", :class => "form-label" %>
+      <%= f.text_field :nickname, :class => "form-control" %>
+    </div>
+ 
+    <div class="form-group">
+      <%= f.label :prefecture_id, "お住まいの都道府県", :class => "form-label" %>
+      <%= f.number_field :prefecture_id, :class => "form-control" %>
+    </div>
+ 
+    <div class="form-group">
+      <%= f.label :area, "活動予定地域", :class => "form-label" %>
+      <%= f.text_field :area, :class => "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :age, "年齢", :class => "form-label" %>
+      <%= f.number_field :age, :class => "form-control" %>
+    </div>
+ 
+    <div class="form-group">
+      <%= f.label :part, "担当パート", :class => "form-label" %>
+      <%= f.text_field :part, :class => "form-control" %>
+    </div>
+ 
+    <div class="form-group">
+      <%= f.label :my_hero, "好きなアーティスト", :class => "form-label" %>
+      <%= f.text_field :my_hero, :class => "form-control" %>
+    </div>
+
     <div class="actions">
       <%= f.submit "アカウントを作成する", :class => "btn btn-primary btn-block" %>
     </div>
