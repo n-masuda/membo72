@@ -8,7 +8,7 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <%#link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet"%>
 
     <style>
       .bd-placeholder-img {
@@ -59,9 +59,11 @@
       </div>
     </div>
   </header>
+
     <body>
       <%= yield %>
     </body>
+
   <footer class="text-muted py-5">
     <div class="container">
       <p class="float-end mb-1">
@@ -71,4 +73,5 @@
       <p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a href="../getting-started/introduction/">getting started guide</a>.</p>
     </div>
   </footer>
+
 </html>
