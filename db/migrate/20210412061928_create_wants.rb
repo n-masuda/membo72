@@ -3,7 +3,7 @@ class CreateWants < ActiveRecord::Migration[6.0]
     create_table :wants do |t|
       t.string :title, null: false
       t.string :text, null: false
-      t.string :user, foreign_key: true
+      t.references :user, foreign_key: true
       t.timestamps
     end
   end
