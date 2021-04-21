@@ -6,4 +6,12 @@ class User < ApplicationRecord
   
   has_many :wants
   has_many :entries
+
+  with_options presence: true do
+    validates :area
+    validates :age
+    validates :part
+    validates :my_hero
+  end
+
 end

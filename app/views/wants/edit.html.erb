@@ -2,7 +2,7 @@
   <div class="card-body">
     <h3 class="mt-1 mb-3">登録内容変更</h3>
     <%= form_with model: @want, local: true do |f| %>
-    <%#= render "devise/shared/error_messages", resource: resource %>
+    <%= render "devise/shared/error_messages", model: f.object %>
   
      <div class="form-group">
       <%= f.label :title, "何をお探しですか？", :class => "form-label" %>

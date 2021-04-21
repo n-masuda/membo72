@@ -2,7 +2,7 @@
   <div class="card-body">
     <h3 class="mt-1 mb-3">応募内容入力フォーム</h3>
     <%= form_with model: @entry, url: want_entries_path, local: true do |f| %>
-    <%#= render "devise/shared/error_messages", resource: resource %>
+    <%= render "devise/shared/error_messages", model: f.object %>
    
     <div class="form-group">
       <%= f.label :text, "紹介文", :class => "form-label" %>
