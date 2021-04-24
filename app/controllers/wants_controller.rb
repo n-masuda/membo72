@@ -1,4 +1,7 @@
 class WantsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
+
+
   def index
     @wants = Want.all.order('created_at DESC')
   end
@@ -23,10 +26,13 @@ class WantsController < ApplicationController
 
   def edit
     @want = Want.find(params[:id])
+    redirect_to root_path unless current_user.id == @want.user.id
+
   end
 
   def update
     @want = Want.find(params[:id])
+    redirect_to root_path unless current_user.id == @want.user.id
     if @want.update(want_params)
       redirect_to want_path(@want.id)
     else
@@ -36,6 +42,7 @@ class WantsController < ApplicationController
   
   def destroy
     @want = Want.find(params[:id])
+    redirect_to root_path unless current_user.id == @want.user.id
     if @want.destroy
       redirect_to root_path
     else
