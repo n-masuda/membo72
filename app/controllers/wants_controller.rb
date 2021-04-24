@@ -21,7 +21,6 @@ class WantsController < ApplicationController
 
   def show
     @want = Want.find(params[:id])
-    @entry = Entry.find(params[:id])
   end
 
   def edit

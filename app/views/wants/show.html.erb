@@ -25,19 +25,19 @@
     <div class="border-bottom pb-2 mb-0">
       <%= link_to "エントリー", new_want_entry_path(@want) %>
     </div>
-    <div class="d-flex text-muted pt-3">
-      <%# @entry.each do |entry|%>
+    <% @want.entries.each do |entry|%>
+      <%= link_to(want_entry_path(entry), class:"d-flex text-muted pt-3") do %>
         <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
           <div class="d-flex justify-content-between">
             <strong class="text-gray-dark d-block">
-              <%= @entry.user.nickname %>
+              <%= entry.user.nickname %>
             </strong>
-            <%= link_to "詳細", want_entry_path(@entry) %>
           </div>
-          <%= @entry.text%>
+          <%= entry.text%>
         </div>
-      <%# end %>
-    </div>
+      <% end %>
+    <% end %>
+
   </div>
       <small class="d-block text-end mt-3">
       <%= link_to "削除", want_path(@want), method: :delete, class:"btn btn-sm btn-outline-secondary" %>
