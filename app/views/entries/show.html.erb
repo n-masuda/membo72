@@ -2,22 +2,12 @@
   <div class="card-body">
     <h3 class="mt-1 mb-3">アカウントを作成</h3>
     <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
-    <%= render "devise/shared/error_messages", model: f.object %>
+ 
     <div class="form-group">
       <%= f.label :email, "メールアドレス", :class => "form-label" %>
       <%= f.email_field :email, autocomplete: "email", :class => "form-control" %>
     </div>
- 
-    <div class="form-group">
-      <%= f.label :password, "パスワード (%s文字以上)", :class => "form-label" %>
-      <%= f.password_field :password, :class => "form-control" %>
-    </div>
- 
-    <div class="form-group">
-      <%= f.label :password_confirmation, "もう一度パスワードを入力してください", :class => "form-label" %>
-      <%= f.password_field :password_confirmation, :class => "form-control" %>
-    </div>
- 
+  
      <div class="form-group">
       <%= f.label :nickname, "ニックネーム", :class => "form-label" %>
       <%= f.text_field :nickname, :class => "form-control" %>
@@ -47,12 +37,24 @@
       <%= f.text_field :my_hero, :class => "form-control" %>
     </div>
 
-    <div class="actions">
-      <%= f.submit "アカウントを作成する", :class => "btn btn-primary btn-block" %>
-    </div>
     <% end %>
-    <div class="mt-2">
-      すでにアカウントをお持ちですか？<%= link_to "ログイン", new_user_session_path %>
-    </div>
   </div>
 </div>
+
+  <div class="my-3 p-3 bg-white rounded shadow-sm">
+    <div class="border-bottom pb-2 mb-0">
+      <%= link_to "エントリー" %>
+    </div>
+    <div class="d-flex text-muted pt-3">
+
+      <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+        <div class="d-flex justify-content-between">
+          <strong class="text-gray-dark d-block">
+            <%#= @entries.user.nickname %>
+          </strong>
+          <%= link_to "詳細" %>
+        </div>
+        <%#= @entries.text%>
+      </div>
+    </div>
+  </div>
