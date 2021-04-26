@@ -23,14 +23,18 @@
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
       <% @wants.each do |want|%>
         <li class="list-unstyled col">
-          <%=link_to want_path(want) do %>
             <div class="card shadow-sm">
-              <svg class="bd-placeholder-img card-img-top" width="100%" height="225"  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#55595c"/>
-                <text x="50%" y="50%" fill="#eceeef" dy=".3em">
-                  <%= want.title %>
-                </text>
-              </svg>
-          <% end %>
+              <%=link_to want_path(want) do %>
+                <%if want.img.attached?%>
+                  <%= image_tag want.img ,width:"100%", height:"225" %>
+                <% else%>
+                  <svg class="bd-placeholder-img card-img-top" width="100%" height="225"  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#55595c"/>
+                    <text x="50%" y="50%" fill="#eceeef" dy=".3em">
+                      <%= want.title %>
+                    </text>
+                  </svg>
+                <% end %>
+              <% end %>
               <div class="card-body">
                 <div class="card-text">
                   <%= want.text %>

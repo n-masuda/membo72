@@ -51,6 +51,6 @@ class WantsController < ApplicationController
 
   private
   def want_params
-    params.require(:want).permit(:title, :text).merge(user_id: current_user.id)
+    params.require(:want).permit(:title, :text, :img, :movie).merge(user_id: current_user.id)
   end
 end
