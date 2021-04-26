@@ -9,7 +9,7 @@ class Want < ApplicationRecord
 
 
   with_options presence: true do
-    validates :prefecture_id
+    #validates :prefecture_id
     validates :title
     validates :text
   end
