@@ -9,7 +9,7 @@
     </div>
  
     <div class="form-group">
-      <%= f.label :password, "パスワード (%s文字以上)", :class => "form-label" %>
+      <%= f.label :password, "パスワード (英数６文字以上)", :class => "form-label" %>
       <%= f.password_field :password, :class => "form-control" %>
     </div>
  
@@ -25,7 +25,8 @@
  
     <div class="form-group">
       <%= f.label :prefecture_id, "お住まいの都道府県", :class => "form-label" %>
-      <%= f.number_field :prefecture_id, :class => "form-control" %>
+      <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"form-control"}) %>
+
     </div>
  
     <div class="form-group">
