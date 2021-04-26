@@ -16,12 +16,12 @@ class EntriesController < ApplicationController
   end
 
   def show
-    @entry = Entry.find(params[:id])
+    @entry = Entry.find(params[:want_id])
   end
 
   private
 
   def entry_params
-    params.require(:entry).permit(:text).merge(user_id: current_user.id, want_id: params[:want_id])
+    params.require(:entry).permit(:text, :movie).merge(user_id: current_user.id, want_id: params[:want_id])
   end
 end
