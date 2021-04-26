@@ -13,7 +13,17 @@
       <%= f.label :text, "紹介文", :class => "form-label" %>
       <%= f.text_area :text, :class => "form-control" %>
     </div>
- 
+
+    <div class="form-group">
+      <%= f.label :img, "画像", :class => "form-label" %>
+      <%= f.file_field :img, :class => "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :movie, "動画", :class => "form-label" %>
+      <%= f.file_field :movie, :class => "form-control" %>
+    </div>
+
     <div class="actions">
       <%= f.submit "内容を変更する", :class => "btn btn-primary btn-block" %>
     </div>
