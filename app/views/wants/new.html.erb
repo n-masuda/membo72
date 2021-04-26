@@ -4,7 +4,7 @@
     <%= form_with model: @want, url: wants_path, local: true do |f| %>
     <%= render "devise/shared/error_messages", model: f.object %>
   
-     <div class="form-group">
+    <div class="form-group">
       <%= f.label :title, "何をお探しですか？", :class => "form-label" %>
       <%= f.text_field :title, :class => "form-control" %>
     </div>
