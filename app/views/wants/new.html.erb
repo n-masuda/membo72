@@ -1,34 +1,36 @@
-<div class="card col-sm-6 mx-auto mt-5">
+<div class="card col-sm-12 mx-auto mt-5">
   <div class="card-body">
     <h3 class="mt-1 mb-3">募集情報登録</h3>
     <%= form_with model: @want, url: wants_path, local: true do |f| %>
     <%= render "devise/shared/error_messages", model: f.object %>
   
-    <div class="form-group">
-      <%= f.label :title, "何をお探しですか？", :class => "form-label" %>
+    <div class="col-sm-4 form-group ">
+      <%= f.label :title, "何をお探しですか？", size: "25x1", :class => "form-label" %>
       <%= f.text_field :title, :class => "form-control" %>
     </div>
  
     <div class="form-group">
       <%= f.label :text, "紹介文", :class => "form-label" %>
-      <%= f.text_area :text, :class => "form-control" %>
+      <%= f.text_area :text, size: "50x10", :class => "form-control" %>
     </div>
  
-    <div class="form-group">
+    <div class="col-sm-6 form-group">
       <%= f.label :img, "画像", :class => "form-label" %>
       <%= f.file_field :img, :class => "form-control" %>
     </div>
 
-    <div class="form-group">
+    <div class="col-sm-6 form-group">
       <%= f.label :movie, "動画", :class => "form-label" %>
       <%= f.file_field :movie, :class => "form-control" %>
     </div>
 
 
-
-    <div class="actions">
-      <%= f.submit "募集を開始する", :class => "btn btn-primary btn-block" %>
+  <div class="col-sm-12 d-flex justify-content-center ">
+    <div class="col-sm-2 actions">
+      <%= f.submit "募集を開始する", :class => "btn btn-dark btn-block" %>
     </div>
+  </div>
+
     <% end %>
   </div>
 </div>
