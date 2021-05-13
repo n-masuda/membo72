@@ -1,7 +1,7 @@
 class CreateEntries < ActiveRecord::Migration[6.0]
   def change
     create_table :entries do |t|
-      t.string :text, null: false
+      t.string :text, limit: 500, null: false
       t.references :user, foreign_key: true
       t.references :want, foreign_key: true
       t.timestamps

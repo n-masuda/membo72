@@ -1,23 +1,51 @@
+<style>
+  .jumbotron { 
+    background: url('/images/bears-4.jpg') center no-repeat ; 
+    background-size: cover;
+  }
 
-<section class="py-5 text-center container">
-  <div class="row py-lg-5">
-    <div class="col-lg-6 col-md-8 mx-auto">
-      <h1 class="fw-light">メンバー募集をするためのサイトです</h1>
-      <p class="lead text-muted">ここには説明が入ります</p>
-      <p>
-      <% if user_signed_in? %>
-        <%=link_to "新規作成", new_want_path, class:"btn btn-primary my-2"%>
-        <%=link_to "ログアウト", destroy_user_session_path, method: :delete, class:"btn btn-primary my-2"%>
-      <% else %>
-        <%=link_to "新規登録", new_user_registration_path, class:"btn btn-primary my-2"%>
-        <%=link_to "ログイン", new_user_session_path, class:"btn btn-primary my-2"%>
-      <% end %>
-      </p>
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+
+  .card-text{
+    height: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  }
+</style>
+<div class="bg-white">
+<div class="jumbotron jumbotron-fluid">
+  <div class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light text-light">あなたのバンド<br>メンバー足りてますか？</h1>
+        <p class="lead text-muted">ほしいパートをここから探そう！</p>
+        <p>
+        <% if user_signed_in? %>
+          <%=link_to "新規作成", new_want_path, class:"btn btn-dark my-2"%>
+          <%=link_to "ログアウト", destroy_user_session_path, method: :delete, class:"btn btn-dark my-2"%>
+        <% else %>
+          <%=link_to "新規登録", new_user_registration_path, class:"btn btn-dark my-2"%>
+          <%=link_to "ログイン", new_user_session_path, class:"btn btn-dark my-2"%>
+        <% end %>
+        </p>
+      </div>
     </div>
   </div>
-</section>
+  </div>
 
-<div class="album py-5 bg-light">
+<div class="album py-5 bg-dark">
   <div class="container">
 
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
@@ -41,10 +69,14 @@
                 </div>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <%= link_to "進む", want_path(want), class:"btn btn-sm btn-outline-secondary" %>
-                    <%= link_to "編集", edit_want_path(want), class:"btn btn-sm btn-outline-secondary" %>
+                    <%= link_to "編集", edit_want_path(want), class:"btn btn-sm btn-outline-secondary" if current_user.id == want.user.id %>
                   </div>
-                  <small class="text-muted">9 mins</small>
+                  <small class="text-muted">
+                    <%= want.user.prefecture.name %>
+                  </small>
+                  <small class="text-muted">
+                    <%= time_ago_in_words(want.created_at) %>前
+                  </small>
                 </div>
               </div>
             </div>
@@ -52,4 +84,5 @@
       <% end %>
     </div>
   </div>
+</div>
 </div>
