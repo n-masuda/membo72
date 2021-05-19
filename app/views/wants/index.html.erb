@@ -24,65 +24,65 @@
   }
   }
 </style>
-<div class="bg-white">
-<div class="jumbotron jumbotron-fluid">
-  <div class="py-5 text-center container">
-    <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light text-light">あなたのバンド<br>メンバー足りてますか？</h1>
-        <p class="lead text-muted">ほしいパートをここから探そう！</p>
-        <p>
-        <% if user_signed_in? %>
-          <%=link_to "新規作成", new_want_path, class:"btn btn-dark my-2"%>
-          <%=link_to "ログアウト", destroy_user_session_path, method: :delete, class:"btn btn-dark my-2"%>
-        <% else %>
-          <%=link_to "新規登録", new_user_registration_path, class:"btn btn-dark my-2"%>
-          <%=link_to "ログイン", new_user_session_path, class:"btn btn-dark my-2"%>
-        <% end %>
-        </p>
+
+<div class="bg-dark vh-100">
+  <div class="jumbotron jumbotron-fluid">
+    <div class="py-5 text-center container">
+      <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 class="fw-light text-light">あなたのバンド<br>メンバー足りてますか？</h1>
+          <p class="lead text-muted">ほしいパートをここから探そう！</p>
+          <p>
+          <% if user_signed_in? %>
+            <%=link_to "新規作成", new_want_path, class:"btn btn-dark my-2"%>
+            <%=link_to "ログアウト", destroy_user_session_path, method: :delete, class:"btn btn-dark my-2"%>
+          <% else %>
+            <%=link_to "新規登録", new_user_registration_path, class:"btn btn-dark my-2"%>
+            <%=link_to "ログイン", new_user_session_path, class:"btn btn-dark my-2"%>
+          <% end %>
+          </p>
+        </div>
       </div>
     </div>
   </div>
-  </div>
 
-<div class="album py-5 bg-dark">
-  <div class="container">
+  <div class="album py-5 bg-dark">
+    <div class="container">
 
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-      <% @wants.each do |want|%>
-        <li class="list-unstyled col">
-            <div class="card shadow-sm">
-              <%=link_to want_path(want) do %>
-                <%if want.img.attached?%>
-                  <%= image_tag want.img ,width:"100%", height:"225" %>
-                <% else%>
-                  <svg class="bd-placeholder-img card-img-top" width="100%" height="225"  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#55595c"/>
-                    <text x="50%" y="50%" fill="#eceeef" dy=".3em">
-                      <%= want.title %>
-                    </text>
-                  </svg>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <% @wants.each do |want|%>
+          <li class="list-unstyled col">
+              <div class="card shadow-sm">
+                <%=link_to want_path(want) do %>
+                  <%if want.img.attached?%>
+                    <%= image_tag want.img ,width:"100%", height:"225" %>
+                  <% else%>
+                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225"  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#55595c"/>
+                      <text x="50%" y="50%" fill="#eceeef" dy=".3em">
+                        <%= want.title %>
+                      </text>
+                    </svg>
+                  <% end %>
                 <% end %>
-              <% end %>
-              <div class="card-body">
-                <div class="card-text">
-                  <%= want.text %>
-                </div>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <%= link_to "編集", edit_want_path(want), class:"btn btn-sm btn-outline-secondary" if current_user.id == want.user.id %>
+                <div class="card-body">
+                  <div class="card-text">
+                    <%= want.text %>
                   </div>
-                  <small class="text-muted">
-                    <%= want.user.prefecture.name %>
-                  </small>
-                  <small class="text-muted">
-                    <%= time_ago_in_words(want.created_at) %>前
-                  </small>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                    </div>
+                    <small class="text-muted">
+                      <%= want.user.prefecture.name %>
+                    </small>
+                    <small class="text-muted">
+                      <%= time_ago_in_words(want.created_at) %>前
+                    </small>
+                  </div>
                 </div>
               </div>
-            </div>
-        </li>
-      <% end %>
+          </li>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
 </div>
