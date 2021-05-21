@@ -2,6 +2,7 @@
 ##バンドメンバーを募集するためのアプリケーション
 <img width="1080" alt="スクリーンショット 2021-05-22 0 49 51" src="https://user-images.githubusercontent.com/77085246/119164758-b259f500-ba97-11eb-8b81-c63b9f283f96.png">
 <img width="1088" alt="スクリーンショット 2021-05-22 0 28 27" src="https://user-images.githubusercontent.com/77085246/119163968-e54fb900-ba96-11eb-9690-a80ee0ce40bf.png">
+<img width="1080" alt="スクリーンショット 2021-05-22 0 38 02" src="https://user-images.githubusercontent.com/77085246/119164431-63ac5b00-ba97-11eb-9c33-ff80a3040c66.png">
 # 概要
 スタジオで顔合わせをする前に動画でお互いの技術レベルを確認できる。
 既存バンドがバンドメンバーを募集する事ができる。
