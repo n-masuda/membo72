@@ -74,7 +74,7 @@
                     <small class="text-muted">
                       <%= want.user.prefecture.name %>
                     </small>
-                      <%if current_user.id == @want.user.id%>
+                      <%if current_user.id == want.user.id%>
                         <%= link_to "削除", want_path(want), method: :delete, class:"btn btn-sm btn-outline-secondary" %>
                       <% end %>
                     <small class="text-muted">
