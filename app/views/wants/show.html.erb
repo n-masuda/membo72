@@ -2,14 +2,14 @@
 
 </style>
 
-<main class="bg-dark h-100 mb-60">
+<main class="bg-dark vh-100 mb-60">
   <div class="container">
     <div class="img bg-transparent  d-flex align-items-center justify-content-around  p-3 rounded">
       <div class="card col-sm-6 bg-transparent">
           <%= image_tag @want.img.variant(resize_to_limit: [500, 500]) ,class:"me-3" if @want.img.attached?%>
       </div>
       <div class="card col-sm-6 bg-transparent">
-        <video src="<%= rails_blob_path(@want.movie) %>" type="video/mp4" controls></video>
+        <video src="<%= rails_blob_path(@want.movie) if @want.img.attached?%>" type="video/mp4" controls></video>
       </div>
     </div>
 
