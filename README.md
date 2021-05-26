@@ -22,6 +22,16 @@
 # 実装予定内容
 youtube動画の埋め込み
 
+
+テスト用アカウント等
+募集者用
+メールアドレス: test1@test.com
+パスワード: 1aaaaaa
+応募者用
+メールアドレス: test2@test.com
+パスワード: 1aaaaaa
+
+
 # テーブル設計
 
 ## usersテーブル
