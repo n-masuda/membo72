@@ -26,12 +26,12 @@ youtube動画の埋め込み
 https://membo72.herokuapp.com/ 
 
 #テスト用アカウント
-募集者用
-メールアドレス: test1@test.com
-パスワード: 1aaaaaa
-応募者用
-メールアドレス: test2@test.com
-パスワード: 1aaaaaa
+募集者用  
+メールアドレス:test1@test.com  
+パスワード:1aaaaaa  
+応募者用  
+メールアドレス:test2@test.com  
+パスワード:1aaaaaa  
 
 
 # テーブル設計
