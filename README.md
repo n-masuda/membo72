@@ -22,10 +22,10 @@
 # 実装予定内容
 youtube動画の埋め込み
 
-#Heroku URL
+# Heroku URL
 https://membo72.herokuapp.com/ 
 
-#テスト用アカウント
+# テスト用アカウント
 募集者用  
 メールアドレス:test1@test.com  
 パスワード:1aaaaaa  
